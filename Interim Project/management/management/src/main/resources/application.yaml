@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: management
+  datasource:
+    url: jdbc:mysql://localhost:3306/flightreservation
+    username: root
+    password: 21031969
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8090
+
+jwt:
+  secret: dGhpcyBpcyBhIHZlcnkgbG9uZyBzZWNyZXQga2V5IGZvciBIUzUxMiB0aGF0IG5lZWRzIHRvIGJlIGF0IGxlYXN0IDY0IGJ5dGVz
+  expiration-ms: 86400000         # 24 hours
+  refresh-expiration-ms: 604800000  # 7 days
+
+tatkal:
+  window-open-hours: 24
+  window-close-hours: 4
+  fare-multiplier: 1.30
+  max-passengers-per-booking: 4

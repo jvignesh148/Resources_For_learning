@@ -1,0 +1,21 @@
+<suite name="Flight Booking Suite">
+
+    <test name="User Tests">
+        <classes>
+            <class name="org.example.Tests.UserTest.RegisterTest"/>
+            <class name="org.example.Tests.UserTest.LoginTests"/>
+            <class name="org.example.Tests.UserTest.HomePageTest"/>
+            <class name="org.example.Tests.UserTest.TatkalReservationTest"/>
+            <class name="org.example.Tests.UserTest.FlightStatusTest"/>
+            <class name="org.example.Tests.UserTest.MyBookingTest"/>
+        </classes>
+    </test>
+
+    <test name="Admin Tests">
+        <classes>
+            <class name="org.example.Tests.AdminTest.AdminHomePageTest"/>
+            <class name="org.example.Tests.AdminTest.AdminBookingTest"/>
+        </classes>
+    </test>
+
+</suite>
