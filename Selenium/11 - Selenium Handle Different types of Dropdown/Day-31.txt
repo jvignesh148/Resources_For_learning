@@ -1,0 +1,49 @@
+Day-31
+--------
+Dropdown box
+-------------
+1) select dropdown
+2) Bootstrap dropdown
+3) hidden drop down
+
+
+select dropdown
+-----------------
+
+Select
+
+selectByVisibleText()
+selectByvalue()
+selectByIndex()
+
+<Select id="country">
+ <option value="in">India<option>
+ 
+
+getOptions() --- returns all the options from the dropdown as a WebElement.
+
+
+Assignment
+---------------
+1) Handle country dropdown with/without  using Select class:
+       https://phppot.com/demo/jquery-dependent-dropdown-list-countries-and-states/
+			a) count total number of options
+			b) print all the options 
+		       c) select one option
+
+2) Hidden dropdown
+Login to OrangeHRM--> pim--> employee status
+
+
+3) https://testautomationpractice.blogspot.com/
+	colors multi select box
+
+4) Google search box 
+  - find number of options search
+ - select one option.
+
+
+
+
+
+

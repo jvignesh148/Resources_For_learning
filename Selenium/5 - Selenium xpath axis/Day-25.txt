@@ -1,0 +1,20 @@
+Day-25
+---------
+XPath axis
+--
+self
+parent
+child
+ancestor
+descendent
+following
+preceding
+following-sibling
+preceding-sibling
+
+
+Xpath Axis: https://youtu.be/BRzlyGXx13Q?list=PLUDwpEzHYYLut2OnS4GlY7fiSAabRmsz3
+
+Selectorhub tools: https://www.youtube.com/playlist?list=PLUDwpEzHYYLv8wElK5Pmtuowv-j4AKxQF
+
+Relative locators: https://youtu.be/prXw_lypLTs

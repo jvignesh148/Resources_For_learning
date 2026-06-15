@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+  MODIFIED WSDL - CountryInfoService
+  ============================================================================
+  Changes from original (for learning purposes):
+   1. Service name renamed:
+        CountryInfoService  ->  CountryInfoService_Practice
+   2. Binding style changed:
+        document/literal    ->  rpc/encoded
+   3. minOccurs / maxOccurs added explicitly on input elements
+   4. maxOccurs="unbounded" added to a list element to allow multiple values
+  ============================================================================
+-->
+<wsdl:definitions
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://www.oorsprong.org/websamples.countryinfo"
+    targetNamespace="http://www.oorsprong.org/websamples.countryinfo">
+
+    <!-- ====================== TYPES ====================== -->
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://www.oorsprong.org/websamples.countryinfo"
+                    elementFormDefault="qualified">
+
+            <!-- ===== CapitalCity ===== -->
+            <xsd:element name="CapitalCity">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <!-- MODIFICATION 3: explicit minOccurs / maxOccurs -->
+                        <xsd:element name="sCountryISOCode"
+                                     type="xsd:string"
+                                     minOccurs="1"
+                                     maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="CapitalCityResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="CapitalCityResult"
+                                     type="xsd:string"
+                                     minOccurs="1"
+                                     maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- ===== CountryName ===== -->
+            <xsd:element name="CountryName">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="sCountryISOCode"
+                                     type="xsd:string"
+                                     minOccurs="1"
+                                     maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="CountryNameResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="CountryNameResult"
+                                     type="xsd:string"
+                                     minOccurs="1"
+                                     maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- ===== FullCountryInfo (complex response) ===== -->
+            <xsd:element name="FullCountryInfo">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="sCountryISOCode"
+                                     type="xsd:string"
+                                     minOccurs="1"
+                                     maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:complexType name="tCountryInfo">
+                <xsd:sequence>
+                    <xsd:element name="sISOCode"     type="xsd:string"/>
+                    <xsd:element name="sName"        type="xsd:string"/>
+                    <xsd:element name="sCapitalCity" type="xsd:string"/>
+                    <xsd:element name="sPhoneCode"   type="xsd:string"/>
+                    <xsd:element name="sContinentCode" type="xsd:string"/>
+                    <xsd:element name="sCurrencyISOCode" type="xsd:string"/>
+                    <xsd:element name="sCountryFlag" type="xsd:string"/>
+                    <!-- MODIFICATION 4: maxOccurs unbounded - a country can have many languages -->
+                    <xsd:element name="Languages"    type="xsd:string"
+                                 minOccurs="0"
+                                 maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="FullCountryInfoResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="FullCountryInfoResult" type="tns:tCountryInfo"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:schema>
+    </wsdl:types>
+
+    <!-- ====================== MESSAGES ====================== -->
+    <wsdl:message name="CapitalCitySoapRequest">
+        <wsdl:part name="parameters" element="tns:CapitalCity"/>
+    </wsdl:message>
+    <wsdl:message name="CapitalCitySoapResponse">
+        <wsdl:part name="parameters" element="tns:CapitalCityResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="CountryNameSoapRequest">
+        <wsdl:part name="parameters" element="tns:CountryName"/>
+    </wsdl:message>
+    <wsdl:message name="CountryNameSoapResponse">
+        <wsdl:part name="parameters" element="tns:CountryNameResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="FullCountryInfoSoapRequest">
+        <wsdl:part name="parameters" element="tns:FullCountryInfo"/>
+    </wsdl:message>
+    <wsdl:message name="FullCountryInfoSoapResponse">
+        <wsdl:part name="parameters" element="tns:FullCountryInfoResponse"/>
+    </wsdl:message>
+
+    <!-- ====================== PORT TYPE ====================== -->
+    <wsdl:portType name="CountryInfoServiceSoapType">
+        <wsdl:operation name="CapitalCity">
+            <wsdl:input  message="tns:CapitalCitySoapRequest"/>
+            <wsdl:output message="tns:CapitalCitySoapResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="CountryName">
+            <wsdl:input  message="tns:CountryNameSoapRequest"/>
+            <wsdl:output message="tns:CountryNameSoapResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="FullCountryInfo">
+            <wsdl:input  message="tns:FullCountryInfoSoapRequest"/>
+            <wsdl:output message="tns:FullCountryInfoSoapResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!-- ====================== BINDING ====================== -->
+    <!-- MODIFICATION 2: style changed from "document" to "rpc" and use from "literal" to "encoded" -->
+    <wsdl:binding name="CountryInfoServiceSoapBinding"
+                  type="tns:CountryInfoServiceSoapType">
+        <soap:binding style="rpc"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="CapitalCity">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="CountryName">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="FullCountryInfo">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded"
+                           namespace="http://www.oorsprong.org/websamples.countryinfo"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- ====================== SERVICE ====================== -->
+    <!-- MODIFICATION 1: service name renamed -->
+    <wsdl:service name="CountryInfoService_Practice">
+        <wsdl:port name="CountryInfoServiceSoap"
+                   binding="tns:CountryInfoServiceSoapBinding">
+            <soap:address location="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

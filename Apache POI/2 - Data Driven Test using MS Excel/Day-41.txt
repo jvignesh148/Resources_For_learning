@@ -1,0 +1,20 @@
+Day-41
+--------
+
+
+Data Driven testing
+--------------------
+
+1) Functionality ( Test case)
+2) Prepare test data in excel
+3) develope automation script
+
+Reading properties file
+----
+
+
+Assignment
+-----------
+Data driven testing
+
+https://www.cit.com/cit-bank/resources/calculators/certificate-of-deposit-calculator

@@ -1,0 +1,19 @@
+Day-37
+---------
+JavascriptExecutor
+--------------
+
+JavascriptExecutor   - interface
+
+executeScript() - we can execute javascript statements
+
+sendKeys()
+click()
+
+
+
+Scrolling bar
+---
+
+Upload files
+--------------

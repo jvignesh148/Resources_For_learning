@@ -1,0 +1,48 @@
+Day-30
+-------
+Alerts
+-------
+
+accept()
+
+driver.switchTo().alert().accept()   // close alert box using ok button
+driver.switchTo().alert().dismiss()  // close alert box using cancel button
+driver.switchTo().alert().getText() // capture text value from alert
+driver.switchTo().alert().sendKeys()  // pass the text into inputbox inside the alert
+
+how to capture alert box without using switcho().alert() ?
+Ans: using explicit wait
+
+
+frames
+---------
+driver.switchTo().frame(name)
+driver.switchTo().frame(id)
+driver.switchTo().frame(WebElement)
+driver.switchTo().frame(index)
+
+driver.switchTo().defaultContent();
+inner frame/nested frame
+
+
+
+Assingments
+----------
+1) click on login then handle alert : https://mypage.rediff.com/login/dologin
+
+2) https://ui.vision/demo/webtest/frames/
+1) switch to  5th frame
+2) click on link  - opens new iframe
+3) switch to inner frame 
+4)  check logo presence in the inner frame.
+
+
+
+
+
+
+
+
+
+
+

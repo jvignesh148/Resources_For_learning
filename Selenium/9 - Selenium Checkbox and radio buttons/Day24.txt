@@ -1,0 +1,18 @@
+Day-24
+-------
+Check boxes 
+Dropdowns
+----------
+1) Drop down having select tag in DOM.
+2) DropDown not having select tag in DOM ( input/div) - Bootstrap dropdown
+3) Auto Suggest drop down ( Dynamic)
+
+Select class
+
+
+Assignment
+-------
+1) Handle dropdown without using Select Class 
+
+Select Country & State
+https://phppot.com/demo/jquery-dependent-dropdown-list-countries-and-states/

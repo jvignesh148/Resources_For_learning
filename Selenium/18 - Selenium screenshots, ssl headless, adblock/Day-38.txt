@@ -1,0 +1,74 @@
+Day-38
+--------
+How to capture screenshots
+-----
+1) full page
+2) specific area of the page
+3) web element
+
+
+ChromeOptions
+EdgeOptions
+FirefoxOptions
+etc...
+
+ChromeOptions
+----------
+Headless testing
+-------------------------------------------------------
+ChromeOptions options=new ChromeOptions();
+options.addArguments("--headless=new"); 
+
+advantages
+-----
+1) we can do multiple tasks( since execution happend backend)
+2) faster execution
+
+disadvantage
+-----------
+1) user cannot see the actions on the page. so he cannot understand flow/functionality of the test.
+
+
+SSL Handling
+----------------------------------------------------		
+		ChromeOptions options=new ChromeOptions();
+		options.setAcceptInsecureCerts(true); // accepts SSL certificates
+
+
+to remove "Chrome is being controlled by automated test software"
+-------------------------------------------------------------------
+	ChromeOptions options=new ChromeOptions();
+	options.setExperimentalOption("excludeSwitches", new String[] {"enable-automation"});
+			
+
+To run the tests in Incognito mode
+------------------------------------
+ChromeOptions options=new ChromeOptions();
+options.addArguments("--incognito");
+
+
+Enable browser extension in run time
+----------------------------------
+step 1: Add CRX Extractor/Downloader to chrome Browser  ( manually)
+Step2 : Add SelectorsHub plugin to chrome browser (manually)
+step3 : Capture crx file for selectorshub extension
+Step4: pass crx file path in automation script in Chrome Options
+
+
+ChromeOptions options=new ChromeOptions();
+options.addExtensions(new File("C:\\Drivers\\SelectorsHub.crx"));
+
+
+How to block ads on the page
+----------------------------------
+uBlock-Origin
+AdBlocker
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+Day-35
+--------
+Mouse actions
+-------------
+
+Mouse hover --- moveToElement(element)
+right click --   contextClick(element)
+double click -- doubleClick(element)
+drag and drop  -- dragAndDrop(source, target)
+
+
+
+
+Actions - pre defined class provided in selenium
+
+
+build() - create an action
+perform() - complete an action
+
+getText()  Vs getAttribute(attribute)
+---------------------
+
+<input id="xyz"> welcome </input>
+
+getText() --> returns the inner text   --> welcome
+getAttribute("id") -- returns the value of attribute ---> xyz
+
+
+<input value="welcome"></input>
+getAttribute("value") ---> welcome
+
+
+getText() ----> returns inner text of the web element
+getAttribute(attribute)--->> returns value of attribute
+
+
+
+Actions  Vs Action
+---------------
+
+Actions -- class, will be used to perform mouse actions,
+Action --- interface, will be used to store created actions.
+
+
+Assignments
+-------
+1) double click & Drag and drop
+	https://testautomationpractice.blogspot.com/
+2) drag and drop
+http://demo.guru99.com/test/drag_drop.html
+
+
+
+
+
+
+
+
+
+
+
+

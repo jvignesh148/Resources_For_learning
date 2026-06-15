@@ -1,0 +1,62 @@
+Day-44
+---------
+dependency methods
+
+
+openapp
+login
+search
+advsearch
+logout
+
+
+dependsOnMethods= {"method name1","method name2",....}
+
+
+grouping
+--------------
+
+class1 - m1 m2 m3...
+class2 - m4, m5 ,m6...
+class3 -- m7,m8,m9....
+---
+
+sanity
+regression
+functional
+
+
+loginByfacebook - sanity
+loginby emial  -sanity
+login by twitter  -sanity
+
+signupbyfacebook -regression
+signupbytwitter  -regression
+signupbyemail   - regression
+
+paymentinrupees   - sanity, regression (functional)
+paymentindollars   - sanity, regression  (functional)
+
+1) all sanity tests
+2) all regression tests
+3) all sanity but not regression
+4) all regression but not sanity
+5) all methods which are belongs to both sanity & regression
+
+@Test
+----
+priority
+dependsOnMethods
+groups
+etc....
+
+
+
+
+
+
+
+
+
+
+

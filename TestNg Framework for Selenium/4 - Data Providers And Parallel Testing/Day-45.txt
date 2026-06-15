@@ -1,0 +1,18 @@
+Day-45
+-------
+Parameterization
+-----
+1) @DataProvider  -- data driven testing
+
+2) using xml file -- parallel testing
+
+
+parallel testing using xml file
+-----------------
+
+step1) created test case
+step 2) create xml file then run test case through xml
+step3 ) passed browser name, url as parameters from xml file to setup() method
+step4 ) execute test case on chrome,firefox & Edge (serial execution)
+step5 ) execute test case on chrome,firefox & edge ( parallel execution)
+

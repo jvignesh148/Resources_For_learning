@@ -1,0 +1,41 @@
+Day-33
+-------
+Dynamic table with pagination
+---------
+
+String s="Showing 1 to 10 of 19081 (13232 Pages)"
+
+
+
+
+s.substring(s.indexOf("(")+1,s.indexOf("Pages")-1)   --> 1909
+
+Assignment
+-----
+tables
+----
+
+1) Orangehrm table:  
+	https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers
+
+2) Dynamic Table
+	https://practice.expandtesting.com/dynamic-table
+
+3) Paginatin table
+	https://testautomationpractice.blogspot.com/
+
+
+4) Pagination & Dynamic table ( Web Scrapping)
+	https://money.rediff.com/gainers/bse/daily/groupall
+
+	Test case 1:
+	------------
+	1) Read All data on Daily, Weekly and Monthly wise (From Gainers)
+	2) Print Company, Group and %change. 
+	
+	Test case 2:
+	------------
+	1) Read data from all the groups on Daily, Weekly and Monthly wise (From Gainers)
+	2) In each group print company name which is having lowest %Change 
+
+

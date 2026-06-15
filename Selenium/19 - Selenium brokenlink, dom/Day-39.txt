@@ -1,0 +1,68 @@
+Day-39
+--------
+Broken links
+--------
+
+
+1) Link    href="https://xyz.com"
+
+2) https://xyz.com ---> server ---> status code
+
+3)  status code>=400   broken link
+ status code <400   not a broken link
+	
+Shandow DOM
+-------------------
+XPath cannot handle shadow dom elements.
+Only CSS can handle shadow dom elements.
+
+
+//1) This Element is inside single shadow DOM.
+
+SearchContext shadow = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+shadow.findElement(By.cssSelector("#shadow-element"));
+
+//2) This Element is inside 2 nested shadow DOM.
+
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+shadow1.findElement(By.cssSelector("#nested-shadow-element"));
+
+
+
+//3) This Element is inside 3 nested shadow DOM.
+
+SearchContext shadow0 = driver.findElement(By.cssSelector("#shadow-root")).getShadowRoot();
+Thread.sleep(1000);
+
+SearchContext shadow1 = shadow0.findElement(By.cssSelector("#inner-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+
+SearchContext shadow2 = shadow1.findElement(By.cssSelector("#nested-shadow-dom")).getShadowRoot();
+Thread.sleep(1000);
+
+shadow2.findElement(By.cssSelector("#multi-nested-shadow-element"));
+
+
+Handle svg elements
+------------------------
+//*[name()='path' and contains(@d,'M256,302c8')]
+//a[normalize-space()='']//*[name()='svg']
+//*[name()='path' and contains(@d,'M256.264,0')]
+
+
+
+More videos
+---------
+1)Shadow dom
+https://youtu.be/bpzyjNZ0jaw
+
+
+2) SVG Elements, iFrames and Shadow DOM Elements
+https://youtu.be/v-6JerEgyMM
+
+
+

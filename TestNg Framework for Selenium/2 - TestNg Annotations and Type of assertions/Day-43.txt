@@ -1,0 +1,90 @@
+Day-43
+--------
+Annotations
+----
+
+@Test
+
+@BeforeMethod
+@AfterMethod
+
+@BeforeClass
+@AfterClass
+
+@BeforeTest
+@AfterTest
+
+@BeforeSuite
+@AfterSuite
+
+TC1
+----
+1) Login -- @BeforeMethod
+2) Search --->  @Test
+3) Logout  ---@AfterMethod
+4) Login
+5) Adv search  ---@Test
+6) Logout
+
+
+TC2
+----
+1) Login --- @BeforeClass
+2) Search --- @Test
+3) Adv search   --- @Test
+4) Logout  -- -AfterClass
+
+xml
+-----
+
+<suite name="mysuite>
+	<test name="mytest1>
+		<classes>
+			<class name="xyz"/>
+		<classes>
+	</test>
+
+	<test name="mytest2>
+		<classes>
+			<class name="abc"/>
+		<classes>
+	</test>
+
+<suite>
+
+Assertion - validation point
+
+
+2 kinds of assertions
+----------
+1) Hard assertions
+2) Soft assertions
+
+
+
+Hard assertions
+----
+we can access from "Assert" class
+methods are static
+* if hard assertion failed then rest of the statements will not be executed.
+
+
+software assertion
+------
+we can access though "SoftAssert"  object
+
+SoftAssert sa=new SoftAssert();
+sa.assertTrue()
+
+if soft assertion got failed then rest of the statemetns still execute.
+
+
+
+
+
+
+
+
+
+
+

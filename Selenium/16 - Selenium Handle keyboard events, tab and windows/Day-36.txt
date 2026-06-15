@@ -1,0 +1,21 @@
+Day-36
+---------
+Slider 
+
+dragAndDropBy(Element, x, y)
+
+
+Keyboard actions - Actions 
+
+keyDown()
+keyUp()
+
+
+Ex: Ctrl+shift+A
+act.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).sendKeys("A").keyUp(Keys.SHIFT).keyUp(Keys.CONTROL).perform();
+
+Ex: Enter
+act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).perform();
+
+//Control+Reglink
+act.keyDown(Keys.CONTROL).click(regLink).keyUp(Keys.CONTROL).perform();

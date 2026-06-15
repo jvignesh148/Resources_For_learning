@@ -1,0 +1,26 @@
+Cucumber Framework
+-------------------
+1) Create Maven project -- Update pom.xml
+2) Folder structure
+3) Page Object classes, Base class, Hooks
+4) Login feature file
+5) Login steps
+6) Test Runner - options
+7) generate logs
+8) cucumber reports
+9)Extent reports
+10) tagging  (Grouping)
+
+
+s1 - @sanity
+s2 - @refression
+s3- @sanity  @regression
+
+tags="@sanity"   ---->s1,s3
+
+tags="@sanity and not @regression"   ---->s1
+
+tags="@sanity or @regression" --->s1, s2, s3
+
+tags="@sanity and @regression"  ---> s3
+

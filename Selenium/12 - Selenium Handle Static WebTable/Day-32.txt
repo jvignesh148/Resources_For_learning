@@ -1,0 +1,19 @@
+Day-32
+---------
+Web Tables
+---------
+1) static web table
+2) Dynamic web table
+3) table with pagination
+
+
+r=2
+c=3
+
+//table[@name='BookTable']//tr["+r+"]//td["+c+"]
+
+
+Assignment
+---------
+1) https://blazedemo.com/
+
